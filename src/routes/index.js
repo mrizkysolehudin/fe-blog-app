@@ -9,6 +9,7 @@ import CreatePost from "pages/Post/CreatePost";
 import PostsList from "pages/Post/PostsList";
 import Register from "pages/Users/Register/Register";
 import Login from "pages/Users/Login/Login";
+import Profile from "pages/Profile/Profile";
 
 function AppRoutes() {
 	return (
@@ -22,10 +23,12 @@ function AppRoutes() {
 					</>
 				}>
 				<Route path="" element={<HomePage />} />
-				<Route path="/create-post" element={<CreatePost />} />
 				<Route path="/posts" element={<PostsList />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/login" element={<Login />} />
+
+				<Route path="/create-post" element={<CreatePost />} />
+				<Route path="/profile/:id" element={<Profile />} />
 			</Route>
 		</Routes>
 	);
