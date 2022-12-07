@@ -10,6 +10,7 @@ import PostsList from "pages/Post/PostsList";
 import Register from "pages/Users/Register/Register";
 import Login from "pages/Users/Login/Login";
 import Profile from "pages/Profile/Profile";
+import PostDetails from "pages/Post/PostDetails";
 
 function AppRoutes() {
 	return (
@@ -29,6 +30,7 @@ function AppRoutes() {
 
 				<Route path="/create-post" element={<CreatePost />} />
 				<Route path="/profile/:id" element={<Profile />} />
+				<Route path="/posts/:id" element={<PostDetails />} />
 			</Route>
 		</Routes>
 	);
