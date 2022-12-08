@@ -13,6 +13,7 @@ import Profile from "pages/Users/Profile/Profile";
 import PostDetails from "pages/Post/PostDetails";
 import UpdatePassword from "pages/Users/PasswordManagement/UpdatePassword";
 import UpdateProfileForm from "pages/Users/Profile/UpdateProfileForm";
+import SendEmail from "pages/Users/Emailing/SendEmail";
 
 function AppRoutes() {
 	return (
@@ -38,6 +39,7 @@ function AppRoutes() {
 					path="/update-profile/:id"
 					element={<UpdateProfileForm />}
 				/>
+				<Route path="/send-email" element={<SendEmail />} />
 			</Route>
 		</Routes>
 	);
