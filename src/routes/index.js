@@ -12,6 +12,7 @@ import Login from "pages/Users/Login/Login";
 import Profile from "pages/Users/Profile/Profile";
 import PostDetails from "pages/Post/PostDetails";
 import UpdatePassword from "pages/Users/PasswordManagement/UpdatePassword";
+import UpdateProfileForm from "pages/Users/Profile/UpdateProfileForm";
 
 function AppRoutes() {
 	return (
@@ -33,6 +34,10 @@ function AppRoutes() {
 				<Route path="/profile/:id" element={<Profile />} />
 				<Route path="/posts/:id" element={<PostDetails />} />
 				<Route path="/update-password" element={<UpdatePassword />} />
+				<Route
+					path="/update-profile/:id"
+					element={<UpdateProfileForm />}
+				/>
 			</Route>
 		</Routes>
 	);
