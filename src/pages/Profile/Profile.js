@@ -9,6 +9,30 @@ import {
 import { Link } from "react-router-dom";
 
 export default function Profile() {
+	const datas = [
+		{
+			post: [
+				{
+					name: "Lucif Chrollo",
+					event: "Pelatihan Ruby",
+					type: "Seminar",
+					image: `${hisoka}`,
+					desc: "Diselenggarakan untuk umum.",
+					date: "8 Dec 2022",
+				},
+				{
+					name: "Lucif Chrollo",
+					event: "Seminar Kampus",
+					type: "Seminar",
+					image: `${hisoka}`,
+					desc: "",
+					date: "8 Dec 2022",
+				},
+			],
+		},
+		{ status: 200 },
+	];
+
 	return (
 		<div className="bg-green-700 min-h-screen w-full">
 			<div className="bg-white min-h-screen overflow-hidden max-w-[61rem] mx-auto">
@@ -92,7 +116,7 @@ export default function Profile() {
 					</div>
 				</section>
 
-				<section className="flex gap-x-10 px-5 text-center text-xl">
+				<section className="flex gap-x-10 px-5 text-center text-xl mb-10">
 					<div className="w-[32%]">
 						<p className="border-b-2 border-gray-500  ">
 							Who viewed my profile : 1
@@ -100,13 +124,13 @@ export default function Profile() {
 
 						<div className="flex mt-2">
 							<img
-								className="w-16 h-16 rounded-full"
+								className="w-20 h-20 rounded-full"
 								src={hisoka}
 								alt=""
 							/>
-							<div className="text-start ml-4 font-semibold">
-								<p className="text-[17px] ">Chrollo Lucif</p>
-								<p className="text-[18px] text-indigo-700">
+							<div className="text-start ml-6 mt-4 font-semibold">
+								<p className="text-[16px] ">Chrollo Lucif</p>
+								<p className="text-[18px] text-indigo-700 -mt-1">
 									Starter Account
 								</p>
 							</div>
@@ -117,25 +141,31 @@ export default function Profile() {
 						<p className="border-b-2 border-gray-500 ">
 							My Post -1
 						</p>
+						<div className="space-y-8">
+							{datas[1].status === 200 &&
+								datas[0].post.map((item, index) => (
+									<article className="mt-3 flex">
+										<img
+											className="w-36 h-44 rounded-md"
+											src={item.image}
+											alt=""
+										/>
 
-						<div className="mt-3 flex">
-							<img
-								className="w-40 h-40 rounded-md"
-								src={hisoka}
-								alt=""
-							/>
-
-							<div className="ml-6 text-start">
-								<h3 className="text-2xl font-bold text-green-600 ">
-									Seminar
-								</h3>
-								<p className="text-[17px] text-gray-500">
-									Seminar kampus
-								</p>
-								<Link className="text-[17px] text-indigo-500 hover:underline">
-									Read more
-								</Link>
-							</div>
+										<div className="ml-6 text-start">
+											<h3 className="text-2xl font-bold text-green-600 mb-1 ">
+												{item.type}
+											</h3>
+											<p className="text-[17px] text-gray-500">
+												{item.event}
+											</p>
+											<div className="-mt-1">
+												<Link className="text-[17px] text-indigo-500 hover:underline">
+													Read more
+												</Link>
+											</div>
+										</div>
+									</article>
+								))}
 						</div>
 					</div>
 				</section>

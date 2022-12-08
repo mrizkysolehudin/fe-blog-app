@@ -91,7 +91,7 @@ function PostsList() {
 				<div className="space-y-7">
 					{datas[3].status === 200 &&
 						datas[2].post.map((item, index) => (
-							<article className="flex">
+							<article key={index} className="flex">
 								<div>
 									<img
 										src={item.image}
