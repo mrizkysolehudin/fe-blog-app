@@ -2,7 +2,7 @@ import React from "react";
 
 const SendEmail = () => {
 	return (
-		<div className="bg-gray-900 min-h-screen">
+		<div className="bg-gray-900 min-h-screen pb-12">
 			<h1 className="text-gray-300 text-3xl font-extrabold text-center pt-20 pb-10">
 				Send Message<span className="text-green-300">email title</span>
 			</h1>
