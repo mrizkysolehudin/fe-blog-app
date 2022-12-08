@@ -9,8 +9,9 @@ import CreatePost from "pages/Post/CreatePost";
 import PostsList from "pages/Post/PostsList";
 import Register from "pages/Users/Register/Register";
 import Login from "pages/Users/Login/Login";
-import Profile from "pages/Profile/Profile";
+import Profile from "pages/Users/Profile/Profile";
 import PostDetails from "pages/Post/PostDetails";
+import UpdatePassword from "pages/Users/PasswordManagement/UpdatePassword";
 
 function AppRoutes() {
 	return (
@@ -31,6 +32,7 @@ function AppRoutes() {
 				<Route path="/create-post" element={<CreatePost />} />
 				<Route path="/profile/:id" element={<Profile />} />
 				<Route path="/posts/:id" element={<PostDetails />} />
+				<Route path="/update-password" element={<UpdatePassword />} />
 			</Route>
 		</Routes>
 	);
