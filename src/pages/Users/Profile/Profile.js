@@ -144,7 +144,7 @@ export default function Profile() {
 						<div className="space-y-8">
 							{datas[1].status === 200 &&
 								datas[0].post.map((item, index) => (
-									<article className="mt-3 flex">
+									<article key={index} className="mt-3 flex">
 										<img
 											className="w-36 h-44 rounded-md"
 											src={item.image}
