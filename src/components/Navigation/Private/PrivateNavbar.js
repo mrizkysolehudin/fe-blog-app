@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { BookOpenIcon, LogoutIcon, PlusIcon } from "@heroicons/react/outline";
 import { useDispatch } from "react-redux";
 import { logoutAction } from "redux/slices/users/usersSlices";
+import { Menu, Transition } from "@headlessui/react";
 
 const PrivateNavbar = ({ isLogin }) => {
 	const navigation = [
@@ -12,6 +13,11 @@ const PrivateNavbar = ({ isLogin }) => {
 		{ name: "Profile", href: `/profile/${isLogin._id}`, current: false },
 	];
 
+	const userNavigation = [
+		{ name: "Your Profile", href: `/profile/${isLogin._id}` },
+		{ name: "Change your password", href: "/update-password" },
+	];
+
 	function classNames(...classes) {
 		return classes.filter(Boolean).join(" ");
 	}
@@ -19,7 +25,7 @@ const PrivateNavbar = ({ isLogin }) => {
 	const dispatch = useDispatch();
 
 	return (
-		<nav className="max-w-7xl mx-auto px-8 py-5 bg-gray-800">
+		<nav className="max-w-7xl mx-auto px-8 py-4 bg-gray-800">
 			<div className="flex justify-between">
 				<section className="flex items-center gap-x-10">
 					<span>
@@ -45,23 +51,78 @@ const PrivateNavbar = ({ isLogin }) => {
 					</div>
 				</section>
 
-				<div className="text-white font-semibold flex gap-x-5">
-					<Link
-						to="/create-post"
-						type="button"
-						className="flex items-center bg-blue-600 px-4 rounded-lg hover:bg-blue-700">
-						<PlusIcon className="w-5 h-5 mr-2" />
-						New Post
-					</Link>
+				<section className="text-white font-semibold flex gap-x-5 items-center">
+					<div>
+						<Link
+							to="/create-post"
+							type="button"
+							className="flex items-center bg-blue-600 px-4 py-1 rounded-lg hover:bg-blue-700">
+							<PlusIcon className="w-5 h-5 mr-2" />
+							New Post
+						</Link>
+					</div>
+					<div>
+						<Link
+							onClick={() => dispatch(logoutAction())}
+							type="button"
+							className="flex items-center bg-red-600 px-4 py-1 rounded-lg hover:bg-red-700">
+							<LogoutIcon className="w-5 h-5 mr-2" />
+							<p>Logout</p>
+						</Link>
+					</div>
 
-					<Link
-						onClick={() => dispatch(logoutAction())}
-						type="button"
-						className="flex items-center bg-red-600 px-4 rounded-lg hover:bg-red-700">
-						<LogoutIcon className="w-5 h-5 mr-2" />
-						<p>Logout</p>
-					</Link>
-				</div>
+					<div className="flex-shrink-0 flex items-center">
+						{/* Profile dropdown */}
+						<Menu as="div" className="relative z-10">
+							{({ open }) => (
+								<>
+									<div>
+										<Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+											<span className="sr-only">
+												Open user menu
+											</span>
+											<img
+												className="h-10 w-10 rounded-full border-2 border-white"
+												src={isLogin?.profilePhoto}
+												alt=""
+											/>
+										</Menu.Button>
+									</div>
+									<Transition
+										show={open}
+										as={Fragment}
+										enter="transition ease-out duration-200"
+										enterFrom="transform opacity-0 scale-95"
+										enterTo="transform opacity-100 scale-100"
+										leave="transition ease-in duration-75"
+										leaveFrom="transform opacity-100 scale-100"
+										leaveTo="transform opacity-0 scale-95">
+										<Menu.Items
+											static
+											className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+											{userNavigation.map((item) => (
+												<Menu.Item key={item.name}>
+													{({ active }) => (
+														<a
+															href={item.href}
+															className={classNames(
+																active
+																	? "bg-gray-100"
+																	: "",
+																"block px-4 py-2 text-sm text-gray-700"
+															)}>
+															{item.name}
+														</a>
+													)}
+												</Menu.Item>
+											))}
+										</Menu.Items>
+									</Transition>
+								</>
+							)}
+						</Menu>
+					</div>
+				</section>
 			</div>
 		</nav>
 	);
