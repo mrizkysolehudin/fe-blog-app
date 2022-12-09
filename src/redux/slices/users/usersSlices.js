@@ -1,11 +1,11 @@
-import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import baseUrl from "utils/baseURL";
+import baseUrl from "../../../utils/baseURL";
 
-//beda src
 //Redirect action
+
 const resetUserAction = createAction("user/profile/reset");
-const resetPasswordAction = createAction("user/password/reset");
+const resetPasswordAction = createAction("password/reset");
 
 //register action
 export const registerUserAction = createAsyncThunk(
@@ -303,7 +303,6 @@ export const unBlockUserAction = createAsyncThunk(
 		}
 	}
 );
-
 //Logout action
 export const logoutAction = createAsyncThunk(
 	"/user/logout",

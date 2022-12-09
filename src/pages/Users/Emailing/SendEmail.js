@@ -1,6 +1,8 @@
 import React from "react";
 
-const SendEmail = () => {
+const SendEmail = (props) => {
+	console.log("props");
+	console.log(props);
 	return (
 		<div className="bg-gray-900 min-h-screen pb-12">
 			<h1 className="text-gray-300 text-3xl font-extrabold text-center pt-20 pb-10">
