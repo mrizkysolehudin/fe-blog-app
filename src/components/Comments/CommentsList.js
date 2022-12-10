@@ -20,7 +20,7 @@ const CommentsList = ({ comments }) => {
 						? comments?.length + " comments"
 						: comments?.length + " comment"}
 				</p>
-				{comments.length === 0 ? (
+				{comments?.length === 0 ? (
 					<p className="text-lg text-yellow-500">No comment</p>
 				) : (
 					comments?.map((comment, index) => (

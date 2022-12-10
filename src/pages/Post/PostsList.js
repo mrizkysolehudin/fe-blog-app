@@ -98,7 +98,7 @@ function PostsList() {
 								<article key={index} className="flex">
 									<div>
 										<img
-											src={item.image}
+											src={item?.image}
 											className="w-60 h-[275px] rounded-t-md"
 											alt=""
 										/>
