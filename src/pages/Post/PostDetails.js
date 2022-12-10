@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import DateFormatter from "utils/DateFormatter";
 import LoadingComponent from "utils/LoadingComponent";
 import CommentsList from "components/Comments/CommentsList";
+import AddComment from "components/Comments/AddComment";
 
 const PostDetails = () => {
 	const dispatch = useDispatch();
@@ -19,6 +20,9 @@ const PostDetails = () => {
 
 	const comment = useSelector((state) => state.comment);
 	const { commentCreated, commentDeleted } = comment;
+
+	const user = useSelector((state) => state.users);
+	const { userAuth } = user;
 
 	useEffect(() => {
 		dispatch(fetchPostDetailsAction(id));
@@ -43,7 +47,6 @@ const PostDetails = () => {
 							alt=""
 						/>
 					</section>
-
 					<section className="max-w-lg mx-auto pt-24 pl-7">
 						\
 						<div className="flex justify-center">
@@ -76,7 +79,6 @@ const PostDetails = () => {
 							</div>
 						</div>
 					</section>
-
 					<div className="text-start max-w-xl mx-auto mt-16">
 						<p className="text-gray-200 text-xl">
 							{postDetails?.description}
@@ -96,24 +98,9 @@ const PostDetails = () => {
 					</div>
 
 					<div>
-						<div className=" max-w-xl mx-auto flex justify-center mt-5">
-							<div>
-								<input
-									type="text"
-									placeholder="Add new comment"
-									className="pt-1 pb-2 px-2 rounded-md placeholder:text-sm"
-								/>
-
-								<button className="bg-indigo-600 text-sm text-white font-semibold py-2 px-2 rounded-md ml-2">
-									Submit
-								</button>
-							</div>
-						</div>
-
-						<p className="text-center ml-6 text-red-400 pt-2"></p>
+						{userAuth ? <AddComment postId={id} /> : null}
+						<CommentsList comments={postDetails?.comments} />
 					</div>
-
-					<CommentsList comments={postDetails?.comments} />
 				</div>
 			)}
 		</>
