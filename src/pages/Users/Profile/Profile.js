@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import hisoka from "assets/img/hisoka.jpg";
 import {
 	EyeIcon,
 	MailIcon,
@@ -10,34 +9,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userProfileAction } from "redux/slices/users/usersSlices";
 import DateFormatter from "utils/DateFormatter";
-import { usehi } from "react-router-dom";
 import LoadingComponent from "utils/LoadingComponent";
 
 export default function Profile() {
-	const datas = [
-		{
-			post: [
-				{
-					name: "Lucif Chrollo",
-					event: "Pelatihan Ruby",
-					type: "Seminar",
-					image: `${hisoka}`,
-					desc: "Diselenggarakan untuk umum.",
-					date: "8 Dec 2022",
-				},
-				{
-					name: "Lucif Chrollo",
-					event: "Seminar Kampus",
-					type: "Seminar",
-					image: `${hisoka}`,
-					desc: "",
-					date: "8 Dec 2022",
-				},
-			],
-		},
-		{ status: 200 },
-	];
-
 	const { id } = useParams();
 	const dispatch = useDispatch();
 

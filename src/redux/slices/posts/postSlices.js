@@ -93,7 +93,7 @@ export const deletePostAction = createAsyncThunk(
 		// http calll
 		try {
 			const { data } = await axios.delete(
-				`${baseUrl}/api/post/${postId}`,
+				`${baseUrl}/api/posts/${postId}`,
 				config
 			);
 			dispatch(resetPostDelete());
@@ -256,6 +256,8 @@ const postSlice = createSlice({
 			state.loading = false;
 			state.appErr = undefined;
 			state.serverErr = undefined;
+
+			window.location.href = "/posts";
 		});
 
 		builder.addCase(deletePostAction.rejected, (state, action) => {

@@ -88,7 +88,7 @@ function PostsList() {
 						{appErr} {serverErr}
 					</h1>
 				) : postLists?.length <= 0 ? (
-					<h1 className="text-yellow-400 flex max-w-sm mx-auto text-lg">
+					<h1 className="text-yellow-400 flex items-center max-w-xs mx-auto text-lg">
 						No Post Found
 					</h1>
 				) : (
