@@ -15,6 +15,7 @@ import UpdatePassword from "pages/Users/PasswordManagement/UpdatePassword";
 import UpdateProfileForm from "pages/Users/Profile/UpdateProfileForm";
 import SendEmail from "pages/Users/Emailing/SendEmail";
 import UploadProfilePhoto from "pages/Users/Profile/UploadProfilePhoto";
+import UpdatePost from "pages/Post/UpdatePost";
 
 function AppRoutes() {
 	return (
@@ -45,6 +46,7 @@ function AppRoutes() {
 					path="/upload-profile-photo"
 					element={<UploadProfilePhoto />}
 				/>
+				<Route path="/update-post/:id" element={<UpdatePost />} />
 			</Route>
 		</Routes>
 	);
