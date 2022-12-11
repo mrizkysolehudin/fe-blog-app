@@ -69,7 +69,7 @@ const UpdateComment = () => {
 				</div>
 
 				<div className="bg-white max-w-md mx-auto rounded-lg py-7 px-10">
-					<form>
+					<form onSubmit={formik.handleSubmit}>
 						<div className="flex flex-col">
 							<label className="text-gray-800 font-medium text-sm mb-1">
 								Title
@@ -123,6 +123,7 @@ const UpdateComment = () => {
 						</div>
 
 						<button
+							type="submit"
 							disabled={loading}
 							className={` ${
 								loading
