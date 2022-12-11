@@ -39,6 +39,7 @@ const UpdatePost = () => {
 			const data = {
 				title: values.title,
 				description: values.description,
+				category: values?.category?.label,
 				id,
 			};
 			dispatch(updatePostAction(data));
@@ -96,7 +97,7 @@ const UpdatePost = () => {
 
 						<div className="mt-4">
 							<CategoryDropDown
-								value={formik.values.category?.categoryTitle}
+								value={formik.values.category?.label}
 								onChange={formik.setFieldValue}
 								onBlur={formik.setFieldTouched}
 								error={formik.errors.category}
