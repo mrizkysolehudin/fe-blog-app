@@ -16,7 +16,7 @@ const formSchema = Yup.object({
 	category: Yup.string().required("Category is required"),
 });
 
-const UpdateComment = () => {
+const UpdatePost = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 
@@ -143,4 +143,4 @@ const UpdateComment = () => {
 	);
 };
 
-export default UpdateComment;
+export default UpdatePost;
