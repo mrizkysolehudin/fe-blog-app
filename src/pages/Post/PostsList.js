@@ -77,6 +77,7 @@ function PostsList() {
 									}
 									className="bg-gray-500 py-[7px] text-yellow-600 font-bold rounded-md px-3">
 									{item.title}
+									{console.log(item.title)}
 								</p>
 							))
 						)}

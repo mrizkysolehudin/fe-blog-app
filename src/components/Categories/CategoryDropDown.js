@@ -17,12 +17,12 @@ const CategoryDropDown = (props) => {
 	const allCategories = categoryList?.map((category) => {
 		return {
 			label: category?.title,
-			value: category?._id.toString(),
+			value: category?._id,
 		};
 	});
 
 	const handleChange = (value) => {
-		props.onChange("category", value.value);
+		props.onChange("category", value);
 	};
 
 	const handleBlur = () => {
@@ -41,7 +41,7 @@ const CategoryDropDown = (props) => {
 					onBlur={handleBlur}
 					id="category"
 					options={allCategories}
-					value={props?.value}
+					value={props?.value?.label}
 				/>
 			)}
 

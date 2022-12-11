@@ -13,7 +13,7 @@ import * as Yup from "yup";
 const formSchema = Yup.object({
 	title: Yup.string().required("Title is required"),
 	description: Yup.string().required("Description is required"),
-	category: Yup.string().required("Category is required"),
+	category: Yup.object().required("Category is required"),
 });
 
 const UpdatePost = () => {
@@ -39,7 +39,6 @@ const UpdatePost = () => {
 			const data = {
 				title: values.title,
 				description: values.description,
-				category: values.category,
 				id,
 			};
 			dispatch(updatePostAction(data));
