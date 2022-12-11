@@ -1,3 +1,4 @@
+import CategoryDropDown from "components/Categories/CategoryDropDown";
 import { useFormik } from "formik";
 import React from "react";
 import { useEffect } from "react";
@@ -10,7 +11,7 @@ import {
 import * as Yup from "yup";
 
 const formSchema = Yup.object({
-	tittle: Yup.string().required("Title is required"),
+	title: Yup.string().required("Title is required"),
 	description: Yup.string().required("Description is required"),
 	category: Yup.string().required("Category is required"),
 });
@@ -38,6 +39,7 @@ const UpdateComment = () => {
 			const data = {
 				title: values.title,
 				description: values.description,
+				category: values.category,
 				id,
 			};
 			dispatch(updatePostAction(data));
@@ -93,12 +95,14 @@ const UpdateComment = () => {
 							</div>
 						</div>
 
-						<div className="flex flex-col mt-4">
-							<select className="border  border-gray-300 rounded pt-1 pb-1 px-2">
-								<option value="apa">Select...</option>
-								<option value="apa">apa</option>
-								<option value="ya">ya</option>
-							</select>
+						<div className="mt-4">
+							<CategoryDropDown
+								value={formik.values.category?.categoryTitle}
+								onChange={formik.setFieldValue}
+								onBlur={formik.setFieldTouched}
+								error={formik.errors.category}
+								touched={formik.touched.category}
+							/>
 						</div>
 
 						<div className="pt-6 flex flex-col">
@@ -110,7 +114,7 @@ const UpdateComment = () => {
 								cols="10"
 								onBlur={formik.handleBlur("description")}
 								value={formik.values.description}
-								onChange={formik.handleChange("decription")}
+								onChange={formik.handleChange("description")}
 								type="text"
 								className="border border-gray-300 rounded"></textarea>
 

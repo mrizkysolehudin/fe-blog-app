@@ -64,7 +64,7 @@ export const updatePostAction = createAsyncThunk(
 		// http call
 		try {
 			const { data } = await axios.put(
-				`${baseUrl}/api/post/${post?.id}`,
+				`${baseUrl}/api/posts/${post?.id}`,
 				post,
 				config
 			);
