@@ -49,9 +49,6 @@ const UpdateProfileForm = () => {
 		validationSchema: formSchema,
 	});
 
-	console.log("user");
-	console.log(user);
-
 	if (isUpdated) return <Navigate to={`/profile/${userDetails._id}`} />;
 
 	return (

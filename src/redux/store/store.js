@@ -3,6 +3,7 @@ import usersReducer from "redux/slices/users/usersSlices";
 import categoriesReducer from "redux/slices/category/categorySlice";
 import post from "redux/slices/posts/postSlices";
 import comment from "redux/slices/comments/commentSlices";
+import sendMail from "redux/slices/email/emailSlices";
 
 const store = configureStore({
 	reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
 		category: categoriesReducer,
 		post,
 		comment,
+		sendMail,
 	},
 });
 

@@ -30,18 +30,14 @@ export default function Profile() {
 	}, [id, dispatch]);
 
 	const navigate = useNavigate();
-	const [form, setForm] = useState({
-		email: "",
-		id: null,
-	});
 
 	const sendMailNavigate = () => {
-		setForm({
-			email: profile?.email,
-			id: profile._id,
+		navigate("/send-email", {
+			state: {
+				email: profile?.email,
+				id: profile._id,
+			},
 		});
-		navigate("/send-email");
-		console.log(form);
 	};
 
 	const isLoginUser = userAuth?._id === profile?._id;
