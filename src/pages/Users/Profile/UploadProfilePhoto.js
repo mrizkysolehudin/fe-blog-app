@@ -56,7 +56,7 @@ const UploadProfilePhoto = () => {
 			<div className="bg-white max-w-lg mx-auto px-12 py-9 rounded-lg">
 				<form onSubmit={formik.handleSubmit}>
 					{appErr || serverErr ? (
-						<p>
+						<p className="text-center text-red-600">
 							{appErr} {serverErr}
 						</p>
 					) : (
@@ -99,7 +99,9 @@ const UploadProfilePhoto = () => {
 							</p>
 
 							{loading ? (
-								<button className="flex border-2 border-gray-200 w-full justify-center py-[6px] rounded-md">
+								<button
+									disabled
+									className="flex border-2 border-gray-200 w-full justify-center py-[6px] rounded-md">
 									<UploadIcon className="w-6 h-6 text-gray-400" />
 									<p className="text-gray-800 font-medium text-sm pl-2">
 										Loading please wait...
