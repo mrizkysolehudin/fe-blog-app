@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 import AdminNavbar from "./Admin/AdminNavbar";
 import AccountVerificationAlertSuccess from "./Alerts/AccountVerificationAlertSuccess";
 import AccountVerificationAlertWarning from "./Alerts/AccountVerificationAlertWarning";
@@ -10,7 +9,6 @@ import PublicNavbar from "./Public/PublicNavbar";
 export default function Navbar() {
 	const users = useSelector((state) => state.users);
 	const { userAuth } = users;
-	const { isAdmin } = userAuth;
 
 	const accountVerification = useSelector(
 		(state) => state?.accountVerification
@@ -19,7 +17,7 @@ export default function Navbar() {
 
 	return (
 		<>
-			{isAdmin ? (
+			{userAuth?.isAdmin ? (
 				<AdminNavbar isLogin={userAuth} />
 			) : userAuth ? (
 				<PrivateNavbar isLogin={userAuth} />

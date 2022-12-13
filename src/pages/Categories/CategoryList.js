@@ -2,8 +2,22 @@ import React from "react";
 import hisoka from "assets/img/hisoka.jpg";
 import { PencilAltIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchCategoriesAction } from "redux/slices/category/categorySlice";
 
 const CategoryList = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(fetchCategoriesAction());
+	}, [dispatch]);
+
+	const category = useSelector((state) => state.category);
+	// const {} = category;
+
+	console.log("category");
+	console.log(category);
+
 	return (
 		<div>
 			<main>
