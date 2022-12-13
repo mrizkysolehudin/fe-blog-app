@@ -20,7 +20,8 @@ import UpdateComment from "components/Comments/UpdateComment";
 import AccountVerified from "pages/Users/AccountVerification/AccountVerified";
 import ResetPasswordForm from "pages/Users/PasswordManagement/ResetPasswordForm";
 import PrivateRoute from "components/Navigation/ProtectedRoutes/PrivateRoute";
-import AddCategory from "components/Categories/AddCategory";
+import AddCategory from "pages/Categories/AddCategory";
+import { UpdateCategory } from "pages/Categories/UpdateCategory";
 
 function AppRoutes() {
 	return (
@@ -44,6 +45,10 @@ function AppRoutes() {
 				/>
 
 				<Route path="/add-category" element={<AddCategory />} />
+				<Route
+					path="/update-category/:id"
+					element={<UpdateCategory />}
+				/>
 			</Route>
 
 			{/* Private Route */}
