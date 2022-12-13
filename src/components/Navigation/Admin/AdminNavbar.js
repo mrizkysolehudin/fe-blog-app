@@ -27,7 +27,7 @@ const AdminNavbar = ({ isLogin }) => {
 	const dispatch = useDispatch();
 
 	return (
-		<nav className="max-w-7xl mx-auto px-8 py-4 bg-green-800">
+		<nav className="max-w-7xl mx-auto px-8 py-3 bg-green-800">
 			<div className="flex justify-between">
 				<section className="flex items-center gap-x-10">
 					<span>

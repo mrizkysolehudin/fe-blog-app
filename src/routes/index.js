@@ -22,6 +22,7 @@ import ResetPasswordForm from "pages/Users/PasswordManagement/ResetPasswordForm"
 import PrivateRoute from "components/Navigation/ProtectedRoutes/PrivateRoute";
 import AddCategory from "pages/Categories/AddCategory";
 import { UpdateCategory } from "pages/Categories/UpdateCategory";
+import CategoryList from "pages/Categories/CategoryList";
 
 function AppRoutes() {
 	return (
@@ -49,6 +50,7 @@ function AppRoutes() {
 					path="/update-category/:id"
 					element={<UpdateCategory />}
 				/>
+				<Route path="/category-list" element={<CategoryList />} />
 			</Route>
 
 			{/* Private Route */}
