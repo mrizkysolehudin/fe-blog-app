@@ -84,17 +84,21 @@ const PostDetails = () => {
 							{postDetails?.description}
 						</p>
 
-						<div className="flex mt-5">
-							<Link to={`/update-post/${postDetails?._id}`}>
-								<PencilAltIcon className="w-10 h-10 text-yellow-300 ml-4 mr-7" />
-							</Link>
-							<button
-								onClick={() =>
-									dispatch(deletePostAction(postDetails?.id))
-								}>
-								<TrashIcon className="w-10 h-10 text-red-700" />
-							</button>
-						</div>
+						{userAuth && (
+							<div className="flex mt-5">
+								<Link to={`/update-post/${postDetails?._id}`}>
+									<PencilAltIcon className="w-10 h-10 text-yellow-300 ml-4 mr-7" />
+								</Link>
+								<button
+									onClick={() =>
+										dispatch(
+											deletePostAction(postDetails?.id)
+										)
+									}>
+									<TrashIcon className="w-10 h-10 text-red-700" />
+								</button>
+							</div>
+						)}
 					</div>
 
 					<div>

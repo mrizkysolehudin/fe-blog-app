@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import GuestRoute from "components/Navigation/GuestRoute/GuestRoute";
+import PublicRoute from "components/Navigation/PublicRoute/PublicRoute";
 import Navbar from "components/Navigation/Navbar";
 
 import HomePage from "pages/HomePage/HomePage";
@@ -19,6 +19,7 @@ import UpdatePost from "pages/Post/UpdatePost";
 import UpdateComment from "components/Comments/UpdateComment";
 import AccountVerified from "pages/Users/AccountVerification/AccountVerified";
 import ResetPasswordForm from "pages/Users/PasswordManagement/ResetPasswordForm";
+import PrivateRoute from "components/Navigation/ProtectedRoutes/PrivateRoute";
 
 function AppRoutes() {
 	return (
@@ -28,21 +29,31 @@ function AppRoutes() {
 				element={
 					<>
 						<Navbar />
-						<GuestRoute />
+						<PublicRoute />
 					</>
 				}>
 				<Route path="" element={<HomePage />} />
 				<Route path="/posts" element={<PostsList />} />
+				<Route path="/posts/:id" element={<PostDetails />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/login" element={<Login />} />
 				<Route
 					path="/password-reset-token"
 					element={<ResetPasswordForm />}
 				/>
+			</Route>
 
+			{/* Private Route */}
+			<Route
+				path="/"
+				element={
+					<>
+						<Navbar />
+						<PrivateRoute />
+					</>
+				}>
 				<Route path="/create-post" element={<CreatePost />} />
 				<Route path="/profile/:id" element={<Profile />} />
-				<Route path="/posts/:id" element={<PostDetails />} />
 				<Route path="/update-password" element={<UpdatePassword />} />
 				<Route
 					path="/update-profile/:id"
