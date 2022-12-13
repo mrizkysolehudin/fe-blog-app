@@ -20,6 +20,7 @@ import UpdateComment from "components/Comments/UpdateComment";
 import AccountVerified from "pages/Users/AccountVerification/AccountVerified";
 import ResetPasswordForm from "pages/Users/PasswordManagement/ResetPasswordForm";
 import PrivateRoute from "components/Navigation/ProtectedRoutes/PrivateRoute";
+import AddCategory from "components/Categories/AddCategory";
 
 function AppRoutes() {
 	return (
@@ -41,6 +42,8 @@ function AppRoutes() {
 					path="/password-reset-token"
 					element={<ResetPasswordForm />}
 				/>
+
+				<Route path="/add-category" element={<AddCategory />} />
 			</Route>
 
 			{/* Private Route */}
