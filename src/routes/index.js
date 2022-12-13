@@ -23,6 +23,7 @@ import PrivateRoute from "components/Navigation/ProtectedRoutes/PrivateRoute";
 import AddCategory from "pages/Categories/AddCategory";
 import { UpdateCategory } from "pages/Categories/UpdateCategory";
 import CategoryList from "pages/Categories/CategoryList";
+import UsersList from "pages/Users/UsersList/UsersList";
 
 function AppRoutes() {
 	return (
@@ -51,6 +52,7 @@ function AppRoutes() {
 					element={<UpdateCategory />}
 				/>
 				<Route path="/category-list" element={<CategoryList />} />
+				<Route path="/users" element={<UsersList />} />
 			</Route>
 
 			{/* Private Route */}
