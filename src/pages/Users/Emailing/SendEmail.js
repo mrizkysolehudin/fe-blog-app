@@ -1,7 +1,5 @@
 import { useFormik } from "formik";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 import { sendMailAction } from "redux/slices/email/emailSlices";

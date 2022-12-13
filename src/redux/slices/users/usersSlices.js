@@ -6,6 +6,7 @@ import baseUrl from "utils/baseURL";
 
 const resetUserAction = createAction("user/profile/reset");
 const resetPasswordAction = createAction("password/reset");
+const resetLogout = createAction("logout/reset");
 
 //register action
 export const registerUserAction = createAsyncThunk(
@@ -308,6 +309,8 @@ export const logoutAction = createAsyncThunk(
 	"/user/logout",
 	async (payload, { rejectWithValue, getState, dispatch }) => {
 		try {
+			dispatch(resetLogout());
+
 			localStorage.removeItem("userInfo");
 		} catch (error) {
 			if (!error?.response) {
@@ -685,7 +688,11 @@ const usersSlices = createSlice({
 		builder.addCase(logoutAction.pending, (state, action) => {
 			state.loading = false;
 		});
+		builder.addCase(resetLogout, (state, action) => {
+			state.isLogout = true;
+		});
 		builder.addCase(logoutAction.fulfilled, (state, action) => {
+			state.isLogout = false;
 			state.userAuth = undefined;
 			state.loading = false;
 			state.appErr = undefined;

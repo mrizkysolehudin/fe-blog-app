@@ -17,6 +17,7 @@ import SendEmail from "pages/Users/Emailing/SendEmail";
 import UploadProfilePhoto from "pages/Users/Profile/UploadProfilePhoto";
 import UpdatePost from "pages/Post/UpdatePost";
 import UpdateComment from "components/Comments/UpdateComment";
+import AccountVerified from "pages/Users/AccountVerification/AccountVerified";
 
 function AppRoutes() {
 	return (
@@ -49,6 +50,10 @@ function AppRoutes() {
 				/>
 				<Route path="/update-post/:id" element={<UpdatePost />} />
 				<Route path="/update-comment/:id" element={<UpdateComment />} />
+				<Route
+					path="/verify-account/:token"
+					element={<AccountVerified />}
+				/>
 			</Route>
 		</Routes>
 	);
