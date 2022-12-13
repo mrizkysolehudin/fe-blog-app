@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import GuestRoute from "components/GuestRoute/GuestRoute";
+import GuestRoute from "components/Navigation/GuestRoute/GuestRoute";
 import Navbar from "components/Navigation/Navbar";
 
 import HomePage from "pages/HomePage/HomePage";
@@ -18,6 +18,7 @@ import UploadProfilePhoto from "pages/Users/Profile/UploadProfilePhoto";
 import UpdatePost from "pages/Post/UpdatePost";
 import UpdateComment from "components/Comments/UpdateComment";
 import AccountVerified from "pages/Users/AccountVerification/AccountVerified";
+import ResetPasswordForm from "pages/Users/PasswordManagement/ResetPasswordForm";
 
 function AppRoutes() {
 	return (
@@ -34,6 +35,10 @@ function AppRoutes() {
 				<Route path="/posts" element={<PostsList />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/login" element={<Login />} />
+				<Route
+					path="/password-reset-token"
+					element={<ResetPasswordForm />}
+				/>
 
 				<Route path="/create-post" element={<CreatePost />} />
 				<Route path="/profile/:id" element={<Profile />} />
