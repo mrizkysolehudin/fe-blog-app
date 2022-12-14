@@ -272,7 +272,7 @@ const categorySlices = createSlice({
 		builder.addCase(fetchCategoryAction.rejected, (state, action) => {
 			state.loading = false;
 			state.appErr = action?.payload?.message;
-			state.serverErr = action?.payload?.message;
+			state.serverErr = action?.error?.message;
 		});
 	},
 });
