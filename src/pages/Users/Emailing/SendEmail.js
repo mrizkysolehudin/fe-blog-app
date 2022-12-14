@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import React from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 import { sendMailAction } from "redux/slices/email/emailSlices";
@@ -13,17 +14,12 @@ const formSchema = Yup.object({
 
 const SendEmail = () => {
 	const dispatch = useDispatch();
-	const location = useLocation();
-	const { state } = location;
-	// cara lain
-	// const [form, setForm] = useState({
-	// 	recipientEmail: location.state.email,
-	// 	id: location.state.id,
-	// });
+
+	const [form] = useState(useLocation().state);
 
 	const formik = useFormik({
 		initialValues: {
-			recipientEmail: state?.email,
+			recipientEmail: form?.email,
 			subject: "",
 			message: "",
 		},
@@ -38,7 +34,7 @@ const SendEmail = () => {
 	const sendMail = useSelector((state) => state.sendMail);
 	const { loading, appErr, serverErr, isMailSent } = sendMail;
 
-	if (isMailSent) return <Navigate to={`/profile/${state?.id}`} />;
+	if (isMailSent) return <Navigate to={`/profile/${form?.id}`} />;
 
 	return (
 		<div className="bg-gray-900 min-h-screen pb-12">
@@ -103,6 +99,7 @@ const SendEmail = () => {
 							{formik.touched.message && formik.errors.message}
 						</p>
 					</div>
+
 					{loading ? (
 						<button
 							type="submit"
