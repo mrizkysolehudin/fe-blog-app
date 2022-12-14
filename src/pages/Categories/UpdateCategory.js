@@ -89,14 +89,14 @@ export const UpdateCategory = () => {
 							</button>
 						</div>
 					) : (
-						<div className="mt-6  w-full py-2 px-2 bg-orange-400 hover:bg-indigo-700 rounded-md">
+						<button
+							type="submit"
+							className="mt-6  w-full py-2 px-2 bg-orange-400 hover:bg-indigo-700 rounded-md">
 							<PlusCircleIcon className="w-6 h-6 text-yellow-400/70 absolute" />
-							<button
-								type="submit"
-								className="text-white font-medium text-sm">
+							<div className="text-white font-medium text-sm">
 								Update Category
-							</button>
-						</div>
+							</div>
+						</button>
 					)}
 
 					<div>
