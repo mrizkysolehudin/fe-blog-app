@@ -45,14 +45,6 @@ function AppRoutes() {
 					path="/password-reset-token"
 					element={<ResetPasswordForm />}
 				/>
-
-				<Route path="/add-category" element={<AddCategory />} />
-				<Route
-					path="/update-category/:id"
-					element={<UpdateCategory />}
-				/>
-				<Route path="/category-list" element={<CategoryList />} />
-				<Route path="/users" element={<UsersList />} />
 			</Route>
 
 			{/* Private Route */}
@@ -82,6 +74,13 @@ function AppRoutes() {
 					path="/verify-account/:token"
 					element={<AccountVerified />}
 				/>
+				<Route path="/add-category" element={<AddCategory />} />
+				<Route
+					path="/update-category/:id"
+					element={<UpdateCategory />}
+				/>
+				<Route path="/category-list" element={<CategoryList />} />
+				<Route path="/users" element={<UsersList />} />
 			</Route>
 		</Routes>
 	);
