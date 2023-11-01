@@ -40,9 +40,7 @@ function PostsList() {
 					<p className="text-green-600 font-semibold">
 						Latest Posts from our awesome authors
 					</p>
-					<h1 className="text-gray-300 text-5xl font-bold">
-						Latest Post
-					</h1>
+					<h1 className="text-gray-300 text-5xl font-bold">Latest Post</h1>
 				</div>
 
 				<div>
@@ -72,9 +70,7 @@ function PostsList() {
 							categoryList?.map((item, index) => (
 								<p
 									key={index}
-									onClick={() =>
-										dispatch(fetchPostsAction(item?.title))
-									}
+									onClick={() => dispatch(fetchPostsAction(item?.title))}
 									className="bg-gray-500 py-[7px] text-yellow-600 font-bold rounded-md px-3">
 									{item.title}
 								</p>
@@ -99,48 +95,26 @@ function PostsList() {
 									<div>
 										<img
 											src={item?.image}
-											className="w-60 h-[275px] rounded-t-md"
+											className="w-60 h-[275px] rounded-t-md object-cover"
 											alt=""
 										/>
 										<div className="bg-white flex items-center py-1 justify-evenly">
 											<ThumbUpIcon
-												onClick={() =>
-													dispatch(
-														toggleAddLikesToPost(
-															item?._id
-														)
-													)
-												}
+												onClick={() => dispatch(toggleAddLikesToPost(item?._id))}
 												className={`w-8 h-8 ${
-													item?.isLiked
-														? "text-indigo-600"
-														: "text-gray-600"
+													item?.isLiked ? "text-indigo-600" : "text-gray-600"
 												} `}
 											/>
-											<p className="-ml-3">
-												{item.likes.length}
-											</p>
+											<p className="-ml-3">{item.likes.length}</p>
 											<ThumbDownIcon
-												onClick={() =>
-													dispatch(
-														toggleAddDisLikesToPost(
-															item?._id
-														)
-													)
-												}
+												onClick={() => dispatch(toggleAddDisLikesToPost(item?._id))}
 												className={`w-8 h-8  ${
-													item?.isDisLiked === true
-														? "text-indigo-600"
-														: " text-gray-600"
+													item?.isDisLiked === true ? "text-indigo-600" : " text-gray-600"
 												} `}
 											/>
-											<p className="-ml-3">
-												{item.disLikes.length}
-											</p>
+											<p className="-ml-3">{item.disLikes.length}</p>
 											<EyeIcon className="w-8 h-8 text-gray-400/70" />
-											<p className="-ml-3">
-												{item.numViews}
-											</p>
+											<p className="-ml-3">{item.numViews}</p>
 										</div>
 									</div>
 
@@ -149,12 +123,8 @@ function PostsList() {
 											<h3 className="text-green-400 font-bold text-2xl pb-1">
 												{item.title}
 											</h3>
-											<p className="text-gray-200">
-												{item.description}
-											</p>
-											<Link
-												to={`/posts/${item._id}`}
-												className="text-indigo-500">
+											<p className="text-gray-200">{item.description}</p>
+											<Link to={`/posts/${item._id}`} className="text-indigo-500">
 												Read More..
 											</Link>
 										</div>
@@ -162,19 +132,15 @@ function PostsList() {
 										<div className="mt-6 flex">
 											<img
 												src={item?.user?.profilePhoto}
-												className="w-12 h-12 rounded-full"
+												className="w-12 h-12 rounded-full object-cover"
 												alt=""
 											/>
 											<div className="ml-4">
 												<p className="text-yellow-500 text-sm font-semibold">
-													{item.user.firstName +
-														" " +
-														item.user.lastName}
+													{item.user.firstName + " " + item.user.lastName}
 												</p>
 												<p className="text-green-600">
-													<DateFormatter
-														date={item.createdAt}
-													/>
+													<DateFormatter date={item.createdAt} />
 												</p>
 											</div>
 										</div>
@@ -192,9 +158,7 @@ function PostsList() {
 							className="h-8 md:h-12 lg:h-10 w-full text-gray-900"
 							viewBox="0 0 10 10"
 							preserveAspectRatio="none">
-							<polygon
-								fill="currentColor"
-								points="0 0 10 0 0 10"></polygon>
+							<polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
 						</svg>
 					</div>
 					<div className="skew bg-gray-500  skew-bottom ml-for-radius">
@@ -202,9 +166,7 @@ function PostsList() {
 							className="h-8 bg-gray-500 md:h-12 lg:h-20 w-full text-gray-900"
 							viewBox="0 0 10 10"
 							preserveAspectRatio="none">
-							<polygon
-								fill="currentColor"
-								points="0 0 10 0 10 10"></polygon>
+							<polygon fill="currentColor" points="0 0 10 0 10 10"></polygon>
 						</svg>
 					</div>
 				</div>

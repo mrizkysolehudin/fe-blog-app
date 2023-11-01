@@ -60,37 +60,25 @@ const CategoryList = () => {
 									<td>
 										<div className="py-3 flex items-center px-6">
 											<img
-												src={
-													category?.user?.profilePhoto
-												}
-												className="w-10 h-10 rounded-full"
+												src={category?.user?.profilePhoto}
+												className="w-10 h-10 rounded-full object-cover"
 												alt=""
 											/>
 
 											<div className="text-sm ml-4">
 												<p className="font-semibold">
-													{category?.user?.firstName +
-														" " +
-														category?.user
-															?.lastName}
+													{category?.user?.firstName + " " + category?.user?.lastName}
 												</p>
-												<p className="text-gray-600/90">
-													{category?.user?.email}
-												</p>
+												<p className="text-gray-600/90">{category?.user?.email}</p>
 											</div>
 										</div>
 									</td>
+									<td className="text-gray-600/90 text-sm px-7">{category.title}</td>
 									<td className="text-gray-600/90 text-sm px-7">
-										{category.title}
-									</td>
-									<td className="text-gray-600/90 text-sm px-7">
-										<DateFormatter
-											date={category?.createdAt}
-										/>
+										<DateFormatter date={category?.createdAt} />
 									</td>
 									<td className="px-7">
-										<Link
-											to={`/update-category/${category?._id}`}>
+										<Link to={`/update-category/${category?._id}`}>
 											<PencilAltIcon className="w-5 h-5 text-indigo-600 hover:bg-gray-300 " />
 										</Link>
 									</td>

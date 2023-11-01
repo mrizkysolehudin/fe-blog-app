@@ -1,9 +1,6 @@
 # Blog Application
 
-This Blog Application is a website that functions like a blog. This web application has the following features:
--Creating and deleting posts.
--Liking, unliking, and making and deleting comments on posts.
--User profiles, and more.
+The Blog Application is a website that operates as a blog, offering various features such as creating and deleting posts, liking and unliking posts, leaving and deleting comments on posts, user profiles, and more.
 
 <br />
 

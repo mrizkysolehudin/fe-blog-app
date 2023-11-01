@@ -17,13 +17,8 @@ export default function Profile() {
 
 	const users = useSelector((state) => state.users);
 
-	const {
-		profile,
-		profileAppErr,
-		profileLoading,
-		profileServerErr,
-		userAuth,
-	} = users;
+	const { profile, profileAppErr, profileLoading, profileServerErr, userAuth } =
+		users;
 
 	useEffect(() => {
 		dispatch(userProfileAction(id));
@@ -63,7 +58,7 @@ export default function Profile() {
 					<section className="border-b-[1.1px] border-yellow-900/70 flex">
 						<div className="px-5 h-64 flex flex-col justify-center ">
 							<img
-								className="w-32 h-32 rounded-full mt-12 mb-8"
+								className="w-32 h-32 rounded-full mt-12 mb-8 object-cover"
 								src={profile?.profilePhoto}
 								alt={profile?.firstName}
 							/>
@@ -98,8 +93,7 @@ export default function Profile() {
 
 							<div>
 								<p className="py-2 text-lg pl-4 mt-2">
-									Date Joined:{" "}
-									<DateFormatter date={profile?.createdAt} />
+									Date Joined: <DateFormatter date={profile?.createdAt} />
 								</p>
 							</div>
 
@@ -114,8 +108,7 @@ export default function Profile() {
 									<EyeIcon className="w-6 h-6 " />
 								</p>
 								<p className="text-blue-400 pl-2">
-									Number of viewers:{" "}
-									{profile?.viewedBy?.length}
+									Number of viewers: {profile?.viewedBy?.length}
 								</p>
 							</div>
 
@@ -125,9 +118,7 @@ export default function Profile() {
 										to={`/upload-profile-photo`}
 										className="border flex w-fit px-10 py-2 border-gray-400/60 rounded-md mt-2 hover:bg-gray-100">
 										<UploadIcon className="w-6 h-6 text-black/40" />
-										<p className="text-sm font-medium text-gray-700 pl-2">
-											Upload photo
-										</p>
+										<p className="text-sm font-medium text-gray-700 pl-2">Upload photo</p>
 									</Link>
 								)}
 							</div>
@@ -157,8 +148,7 @@ export default function Profile() {
 					<section className="flex gap-x-10 px-5 text-center text-xl mb-10">
 						<div className="w-[32%]">
 							<p className="border-b-2 border-gray-500  ">
-								Who viewed my profile:{" "}
-								{profile?.viewedBy?.length}
+								Who viewed my profile: {profile?.viewedBy?.length}
 							</p>
 
 							{profile?.viewedBy?.length <= 0 ? (
@@ -167,15 +157,13 @@ export default function Profile() {
 								profile?.viewedBy?.map((viewer, index) => (
 									<div key={index} className="flex mt-2">
 										<img
-											className="w-20 h-20 rounded-full  cursor-pointer"
+											className="w-20 h-20 rounded-full  cursor-pointer object-cover"
 											src={viewer.profilePhoto}
 											alt=""
 										/>
 										<div className="text-start ml-6 mt-4 font-semibold">
 											<p className="text-[16px] ">
-												{viewer?.firstName +
-													" " +
-													viewer?.lastName}
+												{viewer?.firstName + " " + viewer?.lastName}
 											</p>
 											<p className="text-[18px] text-indigo-700 -mt-1">
 												{viewer?.accountType}
@@ -192,14 +180,10 @@ export default function Profile() {
 							</p>
 							<div className="space-y-8">
 								{profile?.posts?.length <= 0 ? (
-									<h1 className="text-center tex-xl">
-										No Post Found
-									</h1>
+									<h1 className="text-center tex-xl">No Post Found</h1>
 								) : (
 									profile?.posts?.map((post, index) => (
-										<article
-											key={index}
-											className="mt-3 flex">
+										<article key={index} className="mt-3 flex">
 											<img
 												className="w-36 h-44 rounded-md  cursor-pointer"
 												src={post?.image}
@@ -210,9 +194,7 @@ export default function Profile() {
 												<h3 className="text-2xl font-bold text-green-600 mb-1 ">
 													{post?.title}
 												</h3>
-												<p className="text-[17px] text-gray-500">
-													{post?.description}
-												</p>
+												<p className="text-[17px] text-gray-500">{post?.description}</p>
 												<div className="-mt-1">
 													<Link
 														to={`/posts/${post?._id}`}

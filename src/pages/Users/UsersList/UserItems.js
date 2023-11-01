@@ -29,16 +29,14 @@ const UserItems = (user) => {
 					<img
 						src={user.user?.profilePhoto}
 						alt=""
-						className="w-11 h-11 rounded-full"
+						className="w-11 h-11 rounded-full object-cover"
 					/>
 
 					<div className="pl-4 text-sm">
 						<p className="font-bold">
 							{user.user?.firstName} {user.user?.lastName}
 						</p>
-						<p className="text-gray-600 text-xs">
-							{user.user?.email}
-						</p>
+						<p className="text-gray-600 text-xs">{user.user?.email}</p>
 					</div>
 				</section>
 
@@ -67,17 +65,13 @@ const UserItems = (user) => {
 
 						{user.user?.isBlocked ? (
 							<button
-								onClick={() =>
-									dispatch(unBlockUserAction(user.user._id))
-								}
+								onClick={() => dispatch(unBlockUserAction(user.user._id))}
 								className="bg-gray-500 ml-3 px-2 rounded-md text-sm text-gray-300 hover:bg-gray-700">
 								UnBlock
 							</button>
 						) : (
 							<button
-								onClick={() =>
-									dispatch(blockUserAction(user.user._id))
-								}
+								onClick={() => dispatch(blockUserAction(user.user._id))}
 								className="bg-red-600 ml-3 px-2 rounded-md text-sm text-gray-300 hover:bg-red-700">
 								Block
 							</button>

@@ -56,9 +56,7 @@ const UpdateProfileForm = () => {
 			<section>
 				<div>
 					<h1 className="text-2xl text-gray-300 font-extrabold text-center pt-20 mb-9">
-						Hei buddy{" "}
-						<span className="text-green-300">lucif chrollo</span>,
-						Do you want to <br /> update your profile?
+						Hei buddy Do you want to <br /> update your profile?
 					</h1>
 					{appErr || serverErr ? (
 						<p className="text-red-500 mt-4 text-2xl">
@@ -70,9 +68,7 @@ const UpdateProfileForm = () => {
 				<div className="bg-white max-w-lg mx-auto px-10 py-9 rounded-xl">
 					<form onSubmit={formik.handleSubmit}>
 						<div className="mb-5">
-							<label className="text-sm text-gray-800 font-semibold">
-								First Name
-							</label>
+							<label className="text-sm text-gray-800 font-semibold">First Name</label>
 							<input
 								name="firstName"
 								onBlur={formik.handleBlur("firstName")}
@@ -82,15 +78,12 @@ const UpdateProfileForm = () => {
 								className="w-full text-sm border-black/20 border rounded-md justify-center flex items-center h-fit py-2 px-3 mt-1 "
 							/>
 							<p className="text-red-500">
-								{formik.touched.firstName &&
-									formik.errors.firstName}
+								{formik.touched.firstName && formik.errors.firstName}
 							</p>
 						</div>
 
 						<div className="mb-5">
-							<label className="text-sm text-gray-800 font-semibold">
-								Last Name
-							</label>
+							<label className="text-sm text-gray-800 font-semibold">Last Name</label>
 							<input
 								onBlur={formik.handleBlur("lastName")}
 								value={formik.values.lastName}
@@ -99,15 +92,12 @@ const UpdateProfileForm = () => {
 								className="w-full text-sm border-black/20 border rounded-md justify-center flex items-center h-fit py-2 px-3 mt-1 "
 							/>
 							<p className="text-red-500">
-								{formik.touched.lastName &&
-									formik.errors.lastName}
+								{formik.touched.lastName && formik.errors.lastName}
 							</p>
 						</div>
 
 						<div className="mb-5">
-							<label className="text-sm text-gray-800 font-semibold">
-								Email
-							</label>
+							<label className="text-sm text-gray-800 font-semibold">Email</label>
 							<input
 								onBlur={formik.handleBlur("email")}
 								value={formik.values.email}
@@ -121,9 +111,7 @@ const UpdateProfileForm = () => {
 						</div>
 
 						<div className="mb-5 flex flex-col">
-							<label className="text-sm text-gray-800 font-semibold mb-1">
-								Bio
-							</label>
+							<label className="text-sm text-gray-800 font-semibold mb-1">Bio</label>
 							<textarea
 								cols="30"
 								rows="6"

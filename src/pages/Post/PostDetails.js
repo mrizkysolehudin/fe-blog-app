@@ -57,44 +57,29 @@ const PostDetails = () => {
 						<div className="pt-16 flex justify-center">
 							<img
 								src={postDetails?.user.profilePhoto}
-								className="w-24 h-24 rounded-full"
-								alt={
-									postDetails?.user.firstName +
-									" " +
-									postDetails?.user.lastName
-								}
+								className="w-24 h-24 rounded-full object-cover"
+								alt={postDetails?.user.firstName + " " + postDetails?.user.lastName}
 							/>
 
 							<div className="ml-9 mt-5">
 								<p className="text-xl  font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-200 to-orange-600">
-									{postDetails?.user.firstName +
-										" " +
-										postDetails?.user.lastName}
+									{postDetails?.user.firstName + " " + postDetails?.user.lastName}
 								</p>
 								<p className="text-gray-200/30">
-									<DateFormatter
-										date={postDetails?.createdAt}
-									/>
+									<DateFormatter date={postDetails?.createdAt} />
 								</p>
 							</div>
 						</div>
 					</section>
 					<div className="text-start max-w-xl mx-auto mt-16">
-						<p className="text-gray-200 text-xl">
-							{postDetails?.description}
-						</p>
+						<p className="text-gray-200 text-xl">{postDetails?.description}</p>
 
 						{userAuth && (
 							<div className="flex mt-5">
 								<Link to={`/update-post/${postDetails?._id}`}>
 									<PencilAltIcon className="w-10 h-10 text-yellow-300 ml-4 mr-7" />
 								</Link>
-								<button
-									onClick={() =>
-										dispatch(
-											deletePostAction(postDetails?.id)
-										)
-									}>
+								<button onClick={() => dispatch(deletePostAction(postDetails?.id))}>
 									<TrashIcon className="w-10 h-10 text-red-700" />
 								</button>
 							</div>

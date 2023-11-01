@@ -41,7 +41,6 @@ const SendEmail = () => {
 			<div>
 				<h1 className="text-gray-300 text-3xl font-extrabold text-center pt-20 pb-10">
 					Send Message
-					<span className="text-green-300">email title</span>
 				</h1>
 				{appErr ||
 					(serverErr && (
@@ -66,9 +65,7 @@ const SendEmail = () => {
 					</div>
 
 					<div className="flex flex-col mb-6">
-						<label className="text-gray-800 font-medium text-sm mb-1">
-							Subject
-						</label>
+						<label className="text-gray-800 font-medium text-sm mb-1">Subject</label>
 						<input
 							onBlur={formik.handleBlur("subject")}
 							value={formik.values.subject}
@@ -83,9 +80,7 @@ const SendEmail = () => {
 					</div>
 
 					<div className="flex flex-col mb-6">
-						<label className="text-gray-800 font-medium text-sm mb-1">
-							Message
-						</label>
+						<label className="text-gray-800 font-medium text-sm mb-1">Message</label>
 						<textarea
 							cols="30"
 							rows="5"
