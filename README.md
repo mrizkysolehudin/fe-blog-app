@@ -80,4 +80,8 @@ Start the project
 
 ## Related Project
 
+⚡[`Backend Blog App`](https://github.com/mrizkysolehudin/be-blog-app)⚡
+
+⚡[`Frontend Blog App`](https://github.com/mrizkysolehudin/fe-blog-app)⚡
+
 ⚡[`Live Demo`](https://fe-blog-app.vercel.app)⚡
