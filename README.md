@@ -72,6 +72,10 @@ Start the project
 
 ## Screenshots
 
+| Register Page                                                                                                | Login Page                                                                                             |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| ![Register Page](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/register-page.png) | ![Login Page](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/login-page.png) |
+
 ## Author
 
 💻 [Muchammad Rizky Solehudin](https://github.com/mrizkysolehudin)
