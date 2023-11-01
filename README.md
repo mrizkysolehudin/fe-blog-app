@@ -1,6 +1,9 @@
 # Blog Application
 
-This web application is a replica of the LinkedIn platform. In this web application, users can create and delete posts, as well as view posts created by other accounts. The application offers both light and dark mode features, modal pop-ups, and next-level authentication for login and logout.
+This Blog Application is a website that functions like a blog. This web application has the following features:
+-Creating and deleting posts.
+-Liking, unliking, and making and deleting comments on posts.
+-User profiles, and more.
 
 <br />
 
