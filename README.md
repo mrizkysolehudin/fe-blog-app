@@ -72,9 +72,33 @@ Start the project
 
 ## Screenshots
 
-| Register Page                                                                                                | Login Page                                                                                             |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| ![Register Page](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/register-page.png) | ![Login Page](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/login-page.png) |
+| Register                                                                                                | Login                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| ![Register](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/register-page.png) | ![Login](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/login-page.png) |
+
+| Home                                                                                               | Create Post                                                                                              |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ![Home](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/landing-page.png) | ![Create Post](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/create-post.png) |
+
+| Posts                                                                                        | Profile                                                                                           |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| ![Posts ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/post.png) | ![Profile ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/profile.png) |
+
+| Upload Photo Profile                                                                                                        | Send Message                                                                                                |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| ![Upload Photo Profile ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/upload-photo-profile.png) | ![Send Message ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/send-message.png) |
+
+| Update Profile                                                                                                | Detail Post                                                                                               |
+| ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| ![Update Profile ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/edit-profile.png) | ![Detail Post ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/detail-post.png) |
+
+| Edit Post                                                                                             | Comment Post                                                                                                   |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| ![Edit Post ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/edit-post.png) | ![Comment Post ](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/comment-section.png) |
+
+| Change Password                                                                                             |
+| ----------------------------------------------------------------------------------------------------------- |
+| ![Post Modal](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/change-password.png) |
 
 ## Author
 
