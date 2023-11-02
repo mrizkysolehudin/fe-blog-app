@@ -72,13 +72,13 @@ Start the project
 
 ## Screenshots
 
-| Register                                                                                                | Login                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| ![Register](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/register-page.png) | ![Login](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/login-page.png) |
+| Register                                                                                                 | Login                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| ![Register](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/register-page2.png) | ![Login](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/login-page2.png) |
 
-| Home                                                                                               | Create Post                                                                                              |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| ![Home](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/landing-page.png) | ![Create Post](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/create-post.png) |
+| Home                                                                                                | Create Post                                                                                              |
+| --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| ![Home](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/landing-page2.png) | ![Create Post](https://github.com/mrizkysolehudin/fe-blog-app/blob/master/src/assets/ss/create-post.png) |
 
 | Posts                                                                                        | Profile                                                                                           |
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
